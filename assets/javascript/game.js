@@ -55,7 +55,6 @@ function setUpGame()
 //initialize the game when the browser loads
 window.onload = setUpGame();
 
-
 //the playerWins function
 function playerWins ()
 { 
@@ -116,8 +115,13 @@ document.onkeyup = function(event)
 			if (lives === 0)
 			{
 				losses++;
-				document.getElementById("ohNoImage").src = "assets/images/ohNo.jpeg";
-				setTimeout("ohNoImage",2000);
+
+					document.getElementById("ohNoImage").src = "assets/images/ohNo.jpeg";
+					setTimeout(function()
+					{
+						document.getElementById("ohNoImage").src = "";
+					},2000);
+				
 				var aww = new Audio("assets/sound/AWW.wav");
 				aww.play();
 				setUpGame();
@@ -141,7 +145,10 @@ document.onkeyup = function(event)
 		yeah.play();
 
 		document.getElementById("winImage").src = "assets/images/winner.jpeg";
-		setTimeout("winImage",2000);
+		setTimeout(function()
+		{
+			document.getElementById("winImage").src = "";
+		},2000);
 		//<img id="winner-img" src="assets/images/winner.jpeg" alt="winner-image" width="200" height="200">
 		winWord = "<p> You got it: " + currentWord + "</p>";
 			document.querySelector("#winWord").innerHTML = winWord.toUpperCase();
