@@ -23,23 +23,31 @@ Assignment week-3-game/ -->
 		<div class="col-md-12"></div>
 	</div>
 	<div class="row">
-		<div class="col-sm-4">
+		<div class="col-sm-6">
 			<img id="profile-img" src="assets/images/biggerbubbles.jpg" alt="bio-image" width="500" height="500">
 		</div>
-			<div class="col-sm-8"></div>
+			<div class="col-sm-6"></div>
 			
-				<h3>press any key to play</h3>
+				<h2>Press any key to play</h2>
+
+				<h3 id="score">Lives left: <span id="lives"></span></h3>
+				<h3 id="score">Wins: <span id="wins"></span></h3>
+				<h3 id="score">Losses: <span id="loss"></span></h3>
+				<h3 id="score"> <span id="winWord"></span></h3>
 				
-				<h3>wins:</h3>
+				<h3 id="currentWord"> </h3>
 			
-				<h3>current word</h3>
+				<h3 id="hiddenWord"> </h3>
 
-				<h3>number of guesses remaining</h3>
+				<h3 id="wrongCharacter"> </h3>
 
-				<h3>letters alreay guessed</h3>
+				<h3 id="alert"></h3>
 
 			</div> <!--end of row -->
-		</div>
+		</div> <!--end of container -->
+
+		<!--link to game.js -->
+		<script type="text/javascript" src="assets/javascript/game.js"></script>
 		
 	</body>
 </html>

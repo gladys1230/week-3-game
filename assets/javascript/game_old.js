@@ -87,7 +87,7 @@ document.onkeyup = function(event)
 	for(var i = 0; i < usedCharacters.length; i++)
 	{
 		//if eventInput matches the character in usedCharacter
-		if (eventInput ===usedCharacters[i])
+		if (eventInput === usedCharacters[i])
 		{
 			foundCharacter = true;
 			
@@ -97,8 +97,11 @@ document.onkeyup = function(event)
 	console.log(foundCharacter);
 
 	var showWrongCharacters = function()
-	{
-		var wrongCharacter = "<p> Wrong Character Guessed: " + usedCharacters + "</p>";
+	{	//the following 2 lines need to be fixed
+		
+		var usedCharactersNotInWord = usedCharacters.filter(function(c){ return currentWord.indexOf(c) === -1})
+		
+		var wrongCharacter = "<p> Wrong Character Guessed: " + usedCharactersNotInWord + "</p>";
 		document.querySelector("#wrongGuess").innerHTML = wrongCharacter;
 	}
 
@@ -111,9 +114,11 @@ document.onkeyup = function(event)
 		if(currentWord.indexOf(eventInput) <= -1)
 		{
 			lives--;
+
 			if (lives === 0)
 			{
 				losses++;
+
 				setupGame();
 			}
 		}
@@ -144,5 +149,4 @@ document.onkeyup = function(event)
 		document.getElementById("wins").innerHTML = wins;
 	}
 }
-
 
